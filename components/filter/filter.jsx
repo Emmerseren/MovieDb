@@ -286,9 +286,9 @@ const Filter = ({ genreMovies, genreTv }) => {
             <defs>
               <linearGradient
                 id="aa"
-                y1={17.7}
-                x2={489.04}
-                y2={17.7}
+                y1={40.76}
+                x2={190.24}
+                y2={40.76}
                 gradientUnits="userSpaceOnUse"
               >
                 <stop offset={0} stopColor="#90cea1" />
