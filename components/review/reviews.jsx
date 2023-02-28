@@ -5,7 +5,6 @@ const reviews = async ({ movieID, type }) => {
     { next: { revalidate: 5 } }
   );
   const res = await data.json();
-  console.log(res);
   return (
     <>
       <div className="grid gap-10 py-5">

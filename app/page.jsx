@@ -3,7 +3,7 @@ import Movie from "./movie/page";
 import TvShow from "./tvShow/page";
 export default async function Home() {
   return (
-    <main>
+    <main  >
    
       <div>
           <h1 className="text-slate-200 my-8  w-full border-slate-100 border-b-4 text-3xl ">

@@ -8,6 +8,11 @@ export default async function MovieDetail({ params }) {
     `https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.API_KEY}`,
     { next: { revalidate: 5 } }
   );
+  const dataProvider = await fetch(
+    `https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 5 } }
+    
+  );
   const res = await data.json();
   return (
     <div className="grid w-fit py-10">

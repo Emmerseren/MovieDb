@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reviews from "@/components/review/reviews";
 
 export default async function tvShow({ params }) {
   const { tvShow } = params;
@@ -25,10 +26,35 @@ export default async function tvShow({ params }) {
             priority
           />
         </div>
-        <h2 className="bg-slate-600 inline-block my-2 py-2 px-4 rounded-md">
+        <div className="grid pb-7 gap-2  ">
+          <h2 className="text-lg font-bold items-center gap-3 flex">
+            
+            Released: {" "} <p className="text-sm text-slate-400"> {new Date(res.release_date).getFullYear()}</p>
+          </h2>
+          <h2 className="flex text-lg font-bold items-center gap-3">
+            Runtime: {" "} <p className="text-sm text-slate-400"> {res.runtime}  min </p>{" "}
+          </h2>
+          <h2 className="flex-wrap sm:flex items-center text-lg font-bold gap-3 ">
+            Genre:{" "}
+            <div className="flex gap-3">
+            
+            {res.genres.map((obj) => (
+              <p className="text-sm text-slate-400">{obj.name},</p>
+              ))}{" "}
+              </div>
+          </h2>
+          <h2 className="flex-wrap items-center text-lg font-bold gap-3">
+            overview:
+            <p className="text-sm text-slate-400 ">{res.overview}</p>
+          </h2>
+        </div>
+        <h2 className={res.status== "Released" ? "bg-lime-700 inline-block my-2 py-2 px-4 rounded-md"  : "bg-red-700 inline-block my-2 py-2 px-4 rounded-md" }>
           {" "}
           {res.status}{" "}
         </h2>
+        
+        
+        <Reviews movieID={tvShow} type="tv"/>
       </div>
     </div>
   );

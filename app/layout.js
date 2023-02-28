@@ -12,11 +12,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
 
-      <body
-        className={`${montserrat.className}  mx-4 lg:mx-32  bg-gray-900 `}
-      >
+      <body className={`${montserrat.className} px-4 lg:px-12  bg-gray-900 h-full   `}>
         <nav className="sticky  top-0 z-50 bg-slate-800 rounded-b-3xl px-4  py-4 w-full  ">
-          
           <FilterGenre />
         </nav>
         {children}{" "}
