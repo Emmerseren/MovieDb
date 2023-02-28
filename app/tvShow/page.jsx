@@ -9,15 +9,16 @@ export default async function tvShow({ media, filter, sort, genre, search }) {
     <>
       <div className="grid gap-5  text-slate-200 grid-cols-fluid max-sm:grid-cols-2">
         {res.results.map((show) => (
+          <div key={show.id}>
           <TvShowComp
           
-            key={show.id}
             title={show.name}
             image={show.poster_path}
             id={show.id}
             release={show.first_air_date}
             rating={show.vote_average}
           />
+          </div>
         ))}
       </div>
     </>

@@ -2,14 +2,15 @@
 import { Disclosure } from "@headlessui/react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-const review = ({ data, rating }) => {
+const review = ({ data, rating, id }) => {
   const imagePath = "https://image.tmdb.org/t/p/original";
   const container = {
     hidden: { height: 0 },
     show: { height: "auto" },
   };
+  console.log(id)
   return (
-    <div className="grid border-b-2 border-slate-400">
+    <div key={id} className="grid border-b-2 border-slate-400">
       <div className="text-slate-200 grid gap-3">
         <div className="grid gap-5">
           <div className="flex gap-2">

@@ -15,7 +15,7 @@ export default function MovieComp({ key, title, image, id, release, rating }) {
           alt={title}
           priority
         />
-        <div class="absolute top-0 p-4  justify-center left-0 w-full h-0 bg-slate-700 opacity-0 group-hover:h-full group-hover:opacity-100 bg-opacity-70 duration-300 grid">
+        <div className="absolute top-0 p-4  justify-center left-0 w-full h-0 bg-slate-700 opacity-0 group-hover:h-full group-hover:opacity-100 bg-opacity-70 duration-300 grid">
           <h2 className="text-sm justify-self-start   row-span-full font-bold">
           Released:  {new Date(release).getFullYear()}
           </h2>
