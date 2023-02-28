@@ -2,7 +2,6 @@ import Movie from "../../movie/page";
 import TvShow from "../../tvShow/page";
 
 const page = (req) => {
-  console.log(req)
   const { search } = req.params;
 
   return (

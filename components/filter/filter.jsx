@@ -13,9 +13,7 @@ const Filter = ({ genreMovies, genreTv }) => {
   const [genreName, setGenreName] = useState("genre");
   const [switchMedia, setSwitchMedia] = useState(genreMovies);
   let paramMedia = switchMedia === genreMovies ? "Movie" : "Tv";
-  console.log(paramMedia);
   const Router = useRouter();
-  console.log(sort);
   const container = {
     hidden: {
       height: 0,
@@ -41,7 +39,6 @@ const Filter = ({ genreMovies, genreTv }) => {
       `/genre/${genreId}?genreName=${genreName}&sort=${sort}&media=${paramMedia}`
     );
   };
-  console.log(searchMovie);
 
   const submit = (e) => {
     e.preventDefault();
@@ -214,7 +211,7 @@ const Filter = ({ genreMovies, genreTv }) => {
                           </svg>
                         </Menu.Item>
 
-                        {switchMedia.genres.map((obj, id) => (
+                        {switchMedia.genres?.map((obj, id) => (
                           <Menu.Item
                             key={id}
                             variants={itemA}

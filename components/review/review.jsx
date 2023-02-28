@@ -8,7 +8,6 @@ const review = ({ data, rating, id }) => {
     hidden: { height: 0 },
     show: { height: "auto" },
   };
-  console.log(id)
   return (
     <div key={id} className="grid border-b-2 border-slate-400">
       <div className="text-slate-200 grid gap-3">

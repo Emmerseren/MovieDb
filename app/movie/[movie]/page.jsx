@@ -42,7 +42,7 @@ export default async function MovieDetail({ params }) {
             Genre:{" "}
             <div className="flex gap-3">
             
-            {res.genres.map((obj) => (
+            {res.genres?.map((obj) => (
               <p key={obj.name} className="text-sm text-slate-400">{obj.name},</p>
               ))}{" "}
               </div>

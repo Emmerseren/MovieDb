@@ -8,7 +8,7 @@ export default async function tvShow({ media, filter, sort, genre, search }) {
   return (
     <>
       <div className="grid gap-5  text-slate-200 grid-cols-fluid max-sm:grid-cols-2">
-        {res.results.map((show) => (
+        {res.results?.map((show) => (
           <div key={show.id}>
           <TvShowComp
           

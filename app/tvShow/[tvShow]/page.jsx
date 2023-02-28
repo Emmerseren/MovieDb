@@ -9,7 +9,6 @@ export default async function tvShow({ params }) {
     { next: { revalidate: 5 } }
   );
   const res = await data.json();
-  console.log(res);
   return (
     <div>
       <div className="text-slate-200  ">
@@ -38,7 +37,7 @@ export default async function tvShow({ params }) {
             Genre:{" "}
             <div className="flex gap-3">
             
-            {res.genres.map((obj) => (
+            {res.genres?.map((obj) => (
               <p key={obj.name} className="text-sm text-slate-400">{obj.name},</p>
               ))}{" "}
               </div>
