@@ -1,4 +1,4 @@
-import MovieComp from "../../components/movieComp";
+import MovieComp from "./movieComp";
 
 export default async function Movie({ media, filter, sort, genre, search }) {
   const url = "https://api.themoviedb.org/3/";

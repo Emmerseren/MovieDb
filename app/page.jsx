@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Movie from "./movie/page";
-import TvShow from "./tvShow/page";
+import Movie from "../components/movie";
+import TvShow from "../components/tvShow";
 export default async function Home() {
   return (
     <main  >

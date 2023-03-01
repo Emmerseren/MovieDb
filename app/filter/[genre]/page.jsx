@@ -1,11 +1,12 @@
-import Movie from "@/app/movie/page";
-import TvShow from "@/app/tvShow/page";
+import Movie from "@/components/movie";
+import TvShow from "@/components/tvShow";
 
 export default function genre(req) {
   const { genre } = req.params;
   const { genreName } = req.searchParams;
   const { sort } = req.searchParams;
   const { media } = req.searchParams;
+  console.log(genre)
   return (
     <div>
       {media === "Movie" ? (

@@ -1,4 +1,4 @@
-import TvShowComp from "../../components/tvShowComp";
+import TvShowComp from "./tvShowComp";
 export default async function tvShow({ media, filter, sort, genre, search }) {
   const url = "https://api.themoviedb.org/3/";
   const data = await fetch( media ?

@@ -36,7 +36,7 @@ const Filter = ({ genreMovies, genreTv }) => {
     e.preventDefault();
     setGenreName(genreName);
     Router.push(
-      `/genre/${genreId}?genreName=${genreName}&sort=${sort}&media=${paramMedia}`
+      `/filter/${genreId}?genreName=${genreName}&sort=${sort}&media=${paramMedia}`
     );
   };
 
