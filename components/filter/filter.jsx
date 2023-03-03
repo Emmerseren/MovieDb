@@ -14,6 +14,7 @@ const Filter = ({ genreMovies, genreTv }) => {
   const [switchMedia, setSwitchMedia] = useState(genreMovies);
   let paramMedia = switchMedia === genreMovies ? "Movie" : "Tv";
   const Router = useRouter();
+  console.log(paramMedia);
   const container = {
     hidden: {
       height: 0,
@@ -227,7 +228,7 @@ const Filter = ({ genreMovies, genreTv }) => {
                                 className={` w-full h-full block lg:px-5 lg:py-4  ${
                                   active ? "bg-slate-400 " : " "
                                 }`}
-                                href={`/genre/${obj.id}?genreName=${genreName}`}
+                                href={`/filter/${obj.id}?genreName=${genreName}&sort=${sort}&media=${paramMedia}`}
                               >
                                 {obj.name}
                               </Link>
