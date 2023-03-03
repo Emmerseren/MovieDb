@@ -11,9 +11,9 @@ const Filter = ({ genreMovies, genreTv }) => {
   const [searchMovie, setSearchMovie] = useState("");
   const [sort, setSort] = useState("popularity.desc");
   const [genreName, setGenreName] = useState("genre");
-  const [switchMedia, setSwitchMedia] = useState(genreMovies);
-  const [paramMedia, setParamMedia] = useState("Movie")
-  console.log(paramMedia)
+  const [switchMedia, setSwitchMedia] = useState(genreTv);
+  const [paramMedia, setParamMedia] = useState("Tv")
+
   const Router = useRouter();
   const container = {
     hidden: {
@@ -33,11 +33,12 @@ const Filter = ({ genreMovies, genreTv }) => {
     show: { scale: 1, opacity: 1, y: 0 },
   };
 
-  const handleRoute = async (genreName, genreId, e) => {
+  const handleRoute = async (name, genreId, e) => {
     e.preventDefault();
-    setGenreName(genreName);
+    console.log(name)
+    setGenreName(name);
     Router.push(
-      `/filter/${genreId}?genreName=${genreName}&sort=${sort}&media=${paramMedia}`
+      `/filter/${genreId}?genreName=${name}&sort=${sort}&media=${paramMedia}`
     );
   };
 
@@ -98,6 +99,7 @@ const Filter = ({ genreMovies, genreTv }) => {
                           <RadioGroup
                             value={switchMedia}
                             onChange={setSwitchMedia}
+                            defaultValue={genreTv}
                             className="text-slate-200 flex  sm:gap-7 gap-3 flex-wrap justify-center  w-full pt-5 lg:justify-start"
                           >
                             <RadioGroup.Option
@@ -231,7 +233,7 @@ const Filter = ({ genreMovies, genreTv }) => {
                                 className={` w-full h-full block lg:px-5 lg:py-4  ${
                                   active ? "bg-slate-400 " : " "
                                 }`}
-                                href={`/filter/${obj.id}?genreName=${genreName}&sort=${sort}&media=${paramMedia}`}
+                                href={`/filter/${obj.id}?genreName=${obj.name}&sort=${sort}&media=${paramMedia}`}
                               >
                                 {obj.name}
                               </Link>
