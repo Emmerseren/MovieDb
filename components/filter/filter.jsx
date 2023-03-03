@@ -35,7 +35,6 @@ const Filter = ({ genreMovies, genreTv }) => {
 
   const handleRoute = async (name, genreId, e) => {
     e.preventDefault();
-    console.log(name)
     setGenreName(name);
     Router.push(
       `/filter/${genreId}?genreName=${name}&sort=${sort}&media=${paramMedia}`

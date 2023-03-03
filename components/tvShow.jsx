@@ -7,7 +7,6 @@ export default async function tvShow({ media, filter, sort, genre, search }) {
       : `${url}movie/popular?api_key=${process.env.API_KEY}&language=en-US&sort_by=${sort}&with_genres=${genre}&query=${search}`
   );
   const res = await data.json();
-  console.log(res);
   return (
     <>
       <div className="grid gap-5  text-slate-200 grid-cols-fluid max-sm:grid-cols-2">
