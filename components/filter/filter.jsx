@@ -12,9 +12,9 @@ const Filter = ({ genreMovies, genreTv }) => {
   const [sort, setSort] = useState("popularity.desc");
   const [genreName, setGenreName] = useState("genre");
   const [switchMedia, setSwitchMedia] = useState(genreMovies);
-  let paramMedia = switchMedia === genreMovies ? "Movie" : "Tv";
+  const [paramMedia, setParamMedia] = useState("Movie")
+  console.log(paramMedia)
   const Router = useRouter();
-  console.log(paramMedia);
   const container = {
     hidden: {
       height: 0,
@@ -50,7 +50,7 @@ const Filter = ({ genreMovies, genreTv }) => {
     <>
       <div className="flex w-full gap-3 lg:justify-between items-center">
         <div className=" w-fit  h-fit  lg:relative   ">
-          <Menu onClick={() => setfilter("hej")}>
+          <Menu>
             {({ open, close }) => (
               <>
                 <Menu.Button className="bg-slate-700 lg:bg-slate-700    border-slate-200 text-slate-200  rounded-md font-bold ">
@@ -103,7 +103,8 @@ const Filter = ({ genreMovies, genreTv }) => {
                             <RadioGroup.Option
                               className="text-slate-200"
                               value={genreTv}
-                            >
+                              onClick={() => setParamMedia("Tv")}
+                              >
                               {({ checked }) => (
                                 <span
                                   className={
@@ -119,7 +120,8 @@ const Filter = ({ genreMovies, genreTv }) => {
                             <RadioGroup.Option
                               className="text-slate-200"
                               value={genreMovies}
-                            >
+                              onClick={() => setParamMedia("Movie")}
+                              >
                               {({ checked }) => (
                                 <span
                                   className={
@@ -133,6 +135,7 @@ const Filter = ({ genreMovies, genreTv }) => {
                               )}
                             </RadioGroup.Option>
                           </RadioGroup>
+                          
                           <RadioGroup
                             value={sort}
                             onChange={setSort}

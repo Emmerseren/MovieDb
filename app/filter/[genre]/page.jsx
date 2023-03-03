@@ -6,7 +6,7 @@ export default function genre(req) {
   const { genreName } = req.searchParams;
   const { sort } = req.searchParams;
   const { media } = req.searchParams;
-  console.log(genreName)
+  console.log(req)
   return (
     <div>
       {media === "Movie" ? (
